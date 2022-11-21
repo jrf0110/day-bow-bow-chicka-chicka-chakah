@@ -11,6 +11,15 @@ export default {
       );
     }
 
+    if (url.pathname === "/api/version2") {
+      return new Response(
+        JSON.stringify({
+          version: "DAY-BOW-BOW-2",
+        }),
+        { headers: { "Content-Type": "application/json" } }
+      );
+    }
+
     return env.ASSETS.fetch(request);
   },
 };
